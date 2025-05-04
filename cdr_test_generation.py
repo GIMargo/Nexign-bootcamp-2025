@@ -60,7 +60,7 @@ def choose_call_type_randomly(call_types: list[str]) -> str:
 
 # Запись в файл .csv тестовых данных, test_id - идентификатор тест-кейса, будет передан в название файла
 def write_to_csv(test_id: str, call_records: list):
-    with open(test_id + "_testdata.csv", "w", newline="") as csvfile:
+    with open("test_data/" + test_id +"_testdata.csv", "w", newline="") as csvfile:
         csvfile.write("\n".join(",".join(cdr) for cdr in call_records))
 
 
@@ -548,7 +548,7 @@ def main():
     gen_TUCBRT05(msisdn_romashka, call_types)
     gen_TUCBRT06(msisdn_romashka, call_types)
     gen_TUCBRT07(msisdn_romashka, call_types)
-    gen_TUCBRT08(msisdn_romashka, call_types)
+    gen_TUCBRT08()
     gen_TUCBRT09(msisdn_romashka, call_types)
     gen_TUCBRT10(msisdn_romashka, call_types)
 
